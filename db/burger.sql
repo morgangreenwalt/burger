@@ -5,14 +5,8 @@ CREATE TABLE burgers (
 	id INTEGER(100) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	burger_name VARCHAR(100) NOT NULL,
 	devoured BOOLEAN NOT NULL,
-    date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    date_time TIMESTAMP NOT NULL
 );
 
-INSERT INTO (burger_name, devoured)
-VALUES ("cheesy jack", true);
-
-INSERT INTO (burger_name, devoured)
-VALUES ("bean burger", true);
-
-INSERT INTO (burger_name, devoured)
-VALUES ("double cheese burger", true);
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("cheesy jack", true), ("bean burger", true), ("double cheese burger", true);

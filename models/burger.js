@@ -1,9 +1,24 @@
-var orm = require("./config/orm.js");
+var orm = require("../config/orm.js");
 
-orm.selectAll("burgers");
+var burgers = {
 
-orm.insertOne("burgers", "burger_name","burger_name");
+	selectAll: function(cb){
+		orm.selectAll("burgers", function(res){
+			cb(res);
+		});
+	},
 
-orm.updateOne("burgers", "burger_name","burger_name");
+	insertOne: function(cb) {
+		orm.insertOne("burgers", tableColumn1, tableColumn2, inputTableColumn1, inputTableColumn2, function(cb){
+			cb(res);
+		});
+	},
 
-module.exports = burger;
+	updateOne: function(cb) {
+		orm.updateOne("burgers", tableColumn1, tableColumn2, inputTableColumn1, inputTableColumn2, function(){
+			cd(res);
+		});
+	}
+};
+
+module.exports = burgers;

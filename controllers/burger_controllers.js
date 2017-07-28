@@ -8,7 +8,7 @@ router.get("/", function(req, res){
 			burgers: data
 		};
 		console.log(burgersObject);
-		res.render("index", burgersObject;)
+		res.render("index", burgersObject);
 	});
 });
 
@@ -18,7 +18,7 @@ router.post("/", function(req, res){
 	});
 });
 
-router.update("/:id", function(req, res){
+router.put("/:id", function(req, res){
 	var devouredCheck = "id =" + req.params.id;
 	burgers.updateOne(devouredCheck, function(){
 		res.redirect("/");

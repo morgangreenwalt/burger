@@ -2,7 +2,7 @@
   "name": "burger",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/morgangreenwalt/burger/issues"
+    "url": "https://github.com/morgangreenwalt/burger/"
   },
   "homepage": "https://github.com/morgangreenwalt/burger#readme",
   "dependencies": {

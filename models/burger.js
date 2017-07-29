@@ -8,15 +8,15 @@ var burgers = {
 		});
 	},
 
-	insertOne: function(cb) {
-		orm.insertOne("burgers", tableColumn1, tableColumn2, inputTableColumn1, inputTableColumn2, function(cb){
+	insertOne: function(inputTableColumnOne,inputTableColumnTwo,cb) {
+		orm.insertOne("burgers", "burger_name", "devoured", inputTableColumnOne, inputTableColumnTwo, function(res){
 			cb(res);
 		});
 	},
 
-	updateOne: function(cb) {
-		orm.updateOne("burgers", tableColumn1, tableColumn2, inputTableColumn1, inputTableColumn2, function(){
-			cd(res);
+	updateOne: function(inputTableColumnOne,cb) {
+		orm.updateOne("burgers", "devoured = true", inputTableColumnOne, function(res){
+			cb(res);
 		});
 	}
 };

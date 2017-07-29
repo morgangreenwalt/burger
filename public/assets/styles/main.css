@@ -9,15 +9,24 @@
 }
 
 .burger-image {
-	position: relative;;
+	position: relative;
+  text-align: center;
 }
 
-.burger-title {
-	position: absolute;
-    top: 25px;
+.burger-title-first {
+    position: absolute;
+    top: 65px;
     text-align: center;
-    right: 170px;
-    color: #fff;
+    color: #614c4c;
+    font-size: 75px;
+}
+
+.burger-title-last {
+	position: absolute;
+    top: 65px;
+    text-align: center;
+    right: 260px;
+    color: #614c4c;
     font-size: 75px;
 }
 
@@ -26,4 +35,12 @@
     border-radius: 30px;
     text-align: center;
     width: 250px;*/
+}
+
+#devour-button, #submit-burger {
+    border-radius: 30px;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding-left: 10px;
+    padding-right: 10px;
 }

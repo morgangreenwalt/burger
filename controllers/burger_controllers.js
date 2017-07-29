@@ -13,13 +13,13 @@ router.get("/", function(req, res){
 });
 
 router.post("/", function(req, res){
-	burgers.insertOne([req.body.burger_name], function(data){
+	burgers.insertOne([req.body.burger_name], ["false"], function(data){
 		res.redirect("/");
 	});
 });
 
 router.put("/:id", function(req, res){
-	var devouredCheck = "id =" + req.params.id;
+	var devouredCheck = "id = " + req.params.id;
 	burgers.updateOne(devouredCheck, function(){
 		res.redirect("/");
 	});

@@ -1,40 +1,46 @@
 <div class="container">
-  <img src="https://c1.staticflickr.com/8/7307/8736284104_9a6a3792d2_b.jpg">
+<div class="burger hero">
+  <div class="burger-image">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Umami_Burger_hamburger.jpg" width="100%" height="400px">
+  </div>
+    <h1 class="burger-title">Devoured<br/>Burger</h1>
+</div>  
 
-  <h1>Welcome to Eat Da Burger App!</h1>
-
-  <h3>Find your favorite burger and update us when you devour it.</h3>
-
-  <div class="row">
-    <div class="col-1/2">
-      <div class="row">
-        {{#each burgers}}
-        {{#unless this.devoured}}
-        <div class="col-3/4">
-          <h4>{{this.burger_name}}</h4>
-        </div> 
-        <div class="col-1/4">
-          <form action="/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="devoured" value="true">
-            <button type="submit" id="devour-button" name="devour-button">Devour It</button>
-          </form>
-        </div>
-        {{/unless}}
-        {{/each}}
-      </div>
-    <div class="col-1/2"> 
+<div class="row">
+  <div class="col-md-4">
+    <div id="burgers">
+      <h3>Burgers I Want to Try:</h3>
       {{#each burgers}}
-      {{#if this.devoured}}
-      <h4>{{this.burger_name}}</h4>
-      {{/if}}
+      {{#unless this.devoured}}
+        <h4 class="burger-name">{{this.burger_name}}</h4>
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit" id="devour-button" name="devour-button">Devour It</button>
+        </form>
+      {{/unless}}
       {{/each}}
     </div>
-  </div>  
+  </div>
 
-  <form class="burger-form" action="/" method="POST">
-    <div class="form-group">
-      <label for="burger-input">Enter your burger here!</label>
-      <input type="text" class="form-control" id="burger-input" name="burger-input" placeholder="Enter your burger here!">
+  <div class="col-md-4">
+    <div id="burgers">
+      <h3>Burgers I've Devoured:</h3>
+      {{#each burgers}}
+        {{#if this.devoured}}
+           <h4 class="burger-name">{{this.burger_name}}</h4>
+        {{/if}}
+      {{/each}}
     </div>
-    <button type="submit" id="submit-burger" name="submit-burger">Add Burger</button>
-  </form>  
+  </div>
+
+  <div class="col-md-4">
+  <h3>Find a Burger:</h3>
+    <form class="burger-form" action="/" method="POST">
+      <div class="form-group">
+        <label for="burger-input">Enter the burger you'd like to try here:</label>
+        <input type="text" class="form-control" id="burger-input" name="burger-input" placeholder="Enter burger name here">
+      </div>
+      <button type="submit" id="submit-burger" name="submit-burger">Add Burger</button>
+    </form> 
+    </div> 
+</div>  

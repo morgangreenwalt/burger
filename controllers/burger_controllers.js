@@ -13,7 +13,7 @@ router.get("/", function(req, res){
 });
 
 router.post("/", function(req, res){
-	burgers.insetOne([req.body.burger_name], function(data){
+	burgers.insertOne([req.body.burger_name], function(data){
 		res.redirect("/");
 	});
 });

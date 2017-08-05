@@ -4,7 +4,7 @@ var exphbs = require("express-handlebars");
 var express = require("express");
 
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -20,5 +20,5 @@ app.use("/", routes);
 
 
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+    console.log("App listening on PORT " + PORT);
 });
